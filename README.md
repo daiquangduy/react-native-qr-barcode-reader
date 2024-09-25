@@ -1,4 +1,4 @@
-# react-native-qr-decode-image-camera
+# react-native-qr-barcode-reader
 
 ```bash
 yarn add react-native-qr-barcode-reader
