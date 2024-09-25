@@ -1,14 +1,12 @@
 # react-native-qr-decode-image-camera
 
 ```bash
-yarn add react-native-qr-decode-image-camera
+yarn add react-native-qr-barcode-reader
 or
-npm install react-native-qr-decode-image-camera
+npm install react-native-qr-barcode-reader
 run
 npm install
 ```
-
-## Install react native camera and give necessary permission
 
 ```bash
 then run
@@ -25,66 +23,6 @@ react-native run-ios
 
 ```
 
-# Example
-
-```javascript
-import React, { Component } from "react";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from "react-native";
-import { QRscanner } from "react-native-qr-decode-image-camera";
-
-export default class Scanner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flashMode: false,
-      zoom: 0.2
-    };
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <QRscanner
-          onRead={this.onRead}
-          renderBottomView={this.bottomView}
-          flashMode={this.state.flashMode}
-          zoom={this.state.zoom}
-          finderY={50}
-        />
-      </View>
-    );
-  }
-  bottomView = () => {
-    return (
-      <View
-        style={{ flex: 1, flexDirection: "row", backgroundColor: "#0000004D" }}
-      >
-        <TouchableOpacity
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-          onPress={() => this.setState({ flashMode: !this.state.flashMode })}
-        >
-          <Text style={{ color: "#fff" }}>йоба-боба-функция</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
-  onRead = res => {
-    console.log(res);
-  };
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000"
-  }
-});
-```
-
 ### QRreader
 
 ```javascript
@@ -96,7 +34,7 @@ import {
   View,
   TouchableOpacity
 } from "react-native";
-import { QRreader } from "react-native-qr-decode-image-camera";
+import { QRreader } from "react-native-qr-barcode-reader";
 import ImagePicker from "react-native-image-picker";
 
 export default class Scanner extends Component {
